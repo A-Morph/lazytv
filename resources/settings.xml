@@ -14,7 +14,8 @@
  <setting id="selectrandos" label="32011" type="action" option="close" action="RunScript($CWD/resources/selector.py,'rando')"/>
  <setting id="lsep3" label="" type="lsep" enable="false" />
  <setting id="maintainsmartplaylist" type="bool" label="32093" default="false"/>
- <setting id="startup" type="bool" label="Announce database analysis on start-up" default="true"/>
+ <setting id="ordersmartplaylist" label="32254" type="bool" enable="eq(-1,true)" default="false"/>
+ <setting id="startup" type="bool" label="32253" default="true"/>
  <!-- gap -->
  </category>
  <category label="32030">
@@ -43,14 +44,14 @@
  <setting type="lsep" label="32063" enable="false"/>
  <setting id="sort_by" type="enum" label="32070" lvalues="32064|32065|32066|32067|32068" default="32065"/>
  <setting id="sort_reverse" type="bool" label="32071" default="false"/>
- <setting id="excl_randos" type="bool" label="32069 " default="false"/>
+ <setting id="excl_randos" type="bool" label="32251" default="false"/>
  <!-- gap -->
  </category>
  <category label="32080">
  <setting id="nextprompt" type="bool" label="32081" default="true"/>
  <setting id="promptduration" label="32082" type="slider" enable="eq(-1,true)" subsetting="true" default="20" range="0,5,60" option="int" />
  <setting id="promptdefaultaction" type="enum" label="32090" enable="eq(-2,true)" lvalues="32091|32092" default="32091"/>
- <setting id="nextprompt_or" type="bool" label="Permit prompt in LazyTV Random Play" enable="eq(-3,true)" default="false"/>
+ <setting id="nextprompt_or" type="bool" label="32252" enable="eq(-3,true)" default="false"/>
  <setting id="prevcheck" type="bool" label="32083" default="false"/>
  <setting type="lsep" label="32084" enable="false"/>
  
@@ -61,11 +62,6 @@
  <setting type="action" label="32087" option="close" action="RunScript($CWD/resources/clone.py)"/>
  <setting type="lsep" label="" enable="false"/>
  <setting type="action" label="32094" option="close" action="RunScript($CWD/resources/episode_exporter.py)"/>
-
- <setting type="lsep" label=""/>
- <setting id="shout" type="bool" visible="false" default="false"/>
- <setting type="lsep" label="32088" visible="eq(-1,false)" enable="false"/>
- <setting type="action" label="32089" visible="eq(-2,false)" option="close" action="RunScript($CWD/resources/shout.py)"/>
 
  <setting id="first_run" type="bool" default="true" visible="false"/>
  <setting id="users_spl" type="text" visible="false" default='none'/>
