@@ -32,6 +32,7 @@ import traceback
 import re
 from xml.etree import ElementTree as et
 import fileinput
+import xbmcvfs
 
 
 __addon__ = xbmcaddon.Addon("script.lazytv")
@@ -39,7 +40,7 @@ __addonid__ = __addon__.getAddonInfo("id")
 __setting__ = __addon__.getSetting
 dialog = xbmcgui.Dialog()
 scriptPath = __addon__.getAddonInfo("path")
-addon_path = xbmc.translatePath("special://home/addons")
+addon_path = xbmcvfs.translatePath("special://home/addons")
 keep_logs = True if __setting__("logging") == "true" else False
 
 start_time = time.time()
