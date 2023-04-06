@@ -32,6 +32,7 @@ import traceback
 import fileinput
 import ast
 import json
+import xbmcvfs
 
 
 __addon__ = xbmcaddon.Addon("script.lazytv")
@@ -39,7 +40,7 @@ __addonid__ = __addon__.getAddonInfo("id")
 __setting__ = __addon__.getSetting
 dialog = xbmcgui.Dialog()
 scriptPath = __addon__.getAddonInfo("path")
-addon_path = xbmc.translatePath("special://home/addons")
+addon_path = xbmcvfs.translatePath("special://home/addons")
 keep_logs = True if __setting__("logging") == "true" else False
 filterYN = True if __setting__("filterYN") == "true" else False
 populate_by_d = __setting__("populate_by_d")
@@ -49,7 +50,6 @@ start_time = time.time()
 base_time = time.time()
 
 WINDOW = xbmcgui.Window(10000)
-
 
 
 def stringlist_to_reallist(string, integers=True):
@@ -242,7 +242,7 @@ def get_TVshows():
 
 
 def Main():
-        
+
     try:
         spec_shows = stringlist_to_reallist(__setting__("selection"))
     except Exception:
